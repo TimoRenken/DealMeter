@@ -1,0 +1,78 @@
+/* -------------------- */
+/* Responsive + Centered */
+/* -------------------- */
+
+body {
+    min-height: 100vh;
+}
+
+/* App container centered + max width */
+.app {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 16px; /* mobile side padding */
+}
+
+/* Header padding responsive */
+.appHeader {
+    padding: 20px 0; /* use app padding instead of hard left/right */
+}
+
+@media (min-width: 768px) {
+    .appHeader {
+        padding: 25px 0;
+    }
+}
+
+/* Desktop: 3 columns (dein Standard), aber flexibler */
+.dashboard {
+    width: 100%;
+    padding: 24px 0 40px;
+    display: grid;
+    gap: 20px;
+
+    /* statt fester px: responsive columns mit min/max */
+    grid-template-columns: minmax(280px, 360px) minmax(0, 1fr) minmax(300px, 420px);
+}
+
+/* Tablets: 2 columns */
+@media (max-width: 1024px) {
+    .dashboard {
+        grid-template-columns: minmax(280px, 360px) minmax(0, 1fr);
+    }
+
+    /* Saved deals unter die anderen beiden */
+    .savedCard {
+        grid-column: 1 / -1;
+    }
+}
+
+/* Mobile: 1 column + centered */
+@media (max-width: 640px) {
+    .dashboard {
+        grid-template-columns: 1fr;
+        padding: 18px 0 28px;
+        gap: 16px;
+    }
+
+    .card {
+        padding: 18px;
+        border-radius: 12px;
+    }
+
+    .appHeader h1 {
+        font-size: 20px;
+        line-height: 1.2;
+    }
+
+    .appHeader p {
+        font-size: 13px;
+    }
+}
+
+/* Make score/result elements never overflow */
+.resultBox,
+.score-card {
+    max-width: 100%;
+    overflow-wrap: anywhere;
+}

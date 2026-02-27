@@ -1,0 +1,519 @@
+/* inter-300 - latin */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 300;
+  src: url('../fonts/inter-v20-latin-300.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+/* inter-regular - latin */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 400;
+  src: url('../fonts/inter-v20-latin-regular.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+/* inter-500 - latin */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 500;
+  src: url('../fonts/inter-v20-latin-500.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+/* inter-600 - latin */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 600;
+  src: url('../fonts/inter-v20-latin-600.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+/* inter-700 - latin */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 700;
+  src: url('../fonts/inter-v20-latin-700.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+
+* {
+    box-sizing: border-box;
+}
+
+h1 {
+    font-weight: 700;
+    letter-spacing: -0.02em;
+}
+
+h2 {
+    font-weight: 600;
+}
+
+label {
+    font-weight: 500;
+}
+
+/* -------------------- */
+/* Basis & Farb-System  */
+/* -------------------- */
+
+:root {
+    --bg: #f4f6f8;
+    --card: #ffffff;
+    --primary: #2a3647;
+    --primary-hover: #2cace2;
+    --accent: #2db37c;
+    --text: #1a1a1a;
+    --muted: #6b7280;
+    --border: #e5e7eb;
+    --bad: #d9534f;
+    --ok: #f0ad4e;
+    --good: #2db37c;
+}
+
+body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--text);
+    font-family: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+}
+
+/* -------------------- */
+/* Header               */
+/* -------------------- */
+
+.appHeader {
+    background: rgb(42 54 71);
+    padding: 25px 40px;
+    border-bottom: 1px solid var(--border);
+    color: white;
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.appHeader h1 {
+    margin: 0;
+    font-size: 26px;
+}
+
+.appHeader p {
+    margin: 5px 0 0;
+    color: white;
+    font-size: 14px;
+}
+
+/* -------------------- */
+/* Layout               */
+/* -------------------- */
+
+.dashboard {
+    display: grid;
+    grid-template-columns: 360px 1fr 420px;
+    gap: 25px;
+    padding: 30px;
+    margin-top: 100px;
+}
+
+/* -------------------- */
+/* Cards                */
+/* -------------------- */
+
+.card {
+    background: var(--card);
+    padding: 22px;
+    border-radius: 14px;
+    box-shadow: 0 8px 22px rgba(0, 0, 0, 0.06);
+}
+
+.card h2 {
+    margin-top: 0;
+    margin-bottom: 18px;
+    font-size: 20px;
+}
+
+/* -------------------- */
+/* Inputs               */
+/* -------------------- */
+
+label {
+    font-size: 13px;
+    color: var(--muted);
+    display: block;
+    margin-top: 14px;
+    margin-bottom: 5px;
+}
+
+input {
+    width: 100%;
+    padding: 10px 12px;
+    border-radius: 8px;
+    border: 1px solid var(--border);
+    font-size: 14px;
+    transition: border 0.2s, box-shadow 0.2s;
+}
+
+input:focus {
+    outline: none;
+    border-color: var(--primary);
+    box-shadow: 0 0 0 2px rgba(31, 60, 136, 0.15);
+}
+
+
+/* -------------------- */
+/* Buttons              */
+/* -------------------- */
+
+button{
+     font-family: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+}
+
+.primaryBtn {
+    margin-top: 20px;
+    width: 100%;
+    padding: 12px;
+    border-radius: 10px;
+    border: none;
+    background: var(--primary);
+    color: white;
+    font-size: 15px;
+    cursor: pointer;
+    transition: background 0.2s, transform 0.05s;
+}
+
+.primaryBtn:hover {
+    background: var(--primary-hover);
+}
+
+.primaryBtn:active {
+    transform: translateY(1px);
+}
+
+.secondaryBtn {
+    margin-top: 10px;
+    width: 100%;
+    padding: 11px;
+    border-radius: 10px;
+    border: 1px solid var(--border);
+    background: var(--primary);
+    cursor: pointer;
+    color: white;
+}
+
+.secondaryBtn:hover {
+    background: #2cace2;
+}
+
+.savedDealBtn {
+    margin-top: 20px;
+    width: 48%;
+    padding: 12px;
+    border-radius: 10px;
+    border: none;
+    background: var(--primary);
+    color: white;
+    font-size: 15px;
+    cursor: pointer;
+    transition: background 0.2s, transform 0.05s;
+}
+
+.savedDealBtn:hover {
+    background: #2cace2;
+
+}
+
+/* -------------------- */
+/* Result Box           */
+/* -------------------- */
+
+.resultBox {
+    background: rgb(42 54 71);
+    color: #e5e7eb;
+    padding: 18px;
+    border-radius: 12px;
+    white-space: pre-line;
+    font-family: Consolas, monospace;
+}
+
+.score-card {
+    margin-top: 20px;
+    padding: 20px;
+    border-radius: 12px;
+    background: #ffffff;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    max-width: 500px;
+}
+
+.score-header {
+    display: flex;
+    justify-content: space-between;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+.score-bar {
+    width: 100%;
+    height: 18px;
+    background: #e5e7eb;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.score-fill {
+    height: 100%;
+    width: 0%;
+    border-radius: 10px;
+    transition: width 0.5s ease, background 0.5s ease;
+}
+
+.score-label {
+    margin-top: 10px;
+    font-weight: 500;
+}
+
+/* -------------------- */
+/* Deal Score (Ampel)   */
+/* -------------------- */
+
+.score-card {
+    margin-top: 16px;
+    padding: 18px;
+    border-radius: 14px;
+    background: #ffffff;
+    border: 1px solid var(--border);
+    box-shadow: 0 8px 22px rgba(0, 0, 0, 0.06);
+}
+
+.score-top {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 12px;
+    margin-bottom: 10px;
+}
+
+.score-title {
+    font-size: 14px;
+    color: var(--muted);
+    font-weight: 600;
+}
+
+.score-number {
+    font-size: 16px;
+    font-weight: 700;
+}
+
+.score-bar {
+    height: 14px;
+    background: #e5e7eb;
+    border-radius: 999px;
+    overflow: hidden;
+}
+
+.score-fill {
+    height: 100%;
+    width: 0%;
+    border-radius: 999px;
+    transition: width 450ms ease;
+}
+
+.score-label {
+    margin-top: 10px;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.score-fill {
+    height: 100%;
+    width: 0%;
+    border-radius: 999px;
+    transition: width 1000ms cubic-bezier(.2, .9, .2, 1);
+}
+
+
+/* Ampel-Farben */
+.score-fill.good {
+    background: var(--good);
+}
+
+.score-fill.ok {
+    background: var(--ok);
+}
+
+.score-fill.bad {
+    background: var(--bad);
+}
+
+.score-label.good {
+    color: var(--good);
+}
+
+.score-label.ok {
+    color: var(--ok);
+}
+
+.score-label.bad {
+    color: var(--bad);
+}
+
+.hidden {
+    display: none;
+}
+
+.dealHead {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
+}
+
+.dealSub {
+    opacity: 0.8;
+    font-size: 0.9rem;
+    margin-bottom: 6px;
+}
+
+.topBadge {
+    margin-left: 8px;
+    padding: 3px 10px;
+    border-radius: 999px;
+    font-size: 12px;
+    font-weight: 700;
+    background: rgb(42 54 71);
+    color: white;
+}
+
+.scoreBadge {
+    padding: 4px 10px;
+    border-radius: 999px;
+    font-size: 12px;
+    font-weight: 800;
+    border: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+.scoreBadge.score-good {
+    background: rgba(22, 163, 74, 0.12);
+    color: #166534;
+}
+
+.scoreBadge.score-ok {
+    background: rgba(245, 158, 11, 0.15);
+    color: #92400e;
+}
+
+.scoreBadge.score-bad {
+    background: rgba(220, 38, 38, 0.12);
+    color: #991b1b;
+}
+
+
+.analysisPlaceholder {
+    text-align: center;
+    color: #7a7a7a;
+    padding: 20px;
+    border: 2px dashed #dcdcdc;
+    border-radius: 12px;
+    margin-top: 12px;
+    background: #fafafa;
+}
+
+
+.analysisLoading {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 30px 10px;
+}
+
+.analysisLoader {
+    text-align: center;
+    color: #444;
+    font-weight: 500;
+}
+
+.analysisLoading.hidden {
+    display: none;
+}
+
+.pulse {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    margin: 0 auto 14px auto;
+    background: rgba(46, 125, 50, 0.15);
+    position: relative;
+}
+
+.pulse::before,
+.pulse::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: 50%;
+    border: 3px solid #2e7d32;
+    animation: pulseAnim 1.6s infinite;
+}
+
+.pulse::after {
+    animation-delay: .8s;
+}
+
+@keyframes pulseAnim {
+    0% {
+        transform: scale(0.6);
+        opacity: 1;
+    }
+
+    100% {
+        transform: scale(1.8);
+        opacity: 0;
+    }
+}
+
+/* -------------------- */
+/* Select (Sortierung)  */
+/* -------------------- */
+
+select {
+    width: 100%;
+    padding: 10px 12px;
+    border-radius: 8px;
+    border: 1px solid var(--border);
+    font-size: 14px;
+    background: #fff;
+    color: var(--text);
+    transition: border 0.2s, box-shadow 0.2s;
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    cursor: pointer;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='20' height='20' fill='%236b7280' viewBox='0 0 24 24'%3E%3Cpath d='M7 10l5 5 5-5z'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 10px center;
+    background-size: 18px;
+     font-family: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+}
+select:focus {
+    outline: none;
+    border-color: var(--primary);
+    box-shadow: 0 0 0 2px rgba(31, 60, 136, 0.15);
+}
+
+select:hover {
+    border-color: var(--primary);
+}
+
+/* Alle Zahlen gleich breit */
+.resultBox,
+.score-number,
+.scoreBadge,
+#savedDeals {
+    font-variant-numeric: tabular-nums;
+}

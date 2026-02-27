@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script type="module" src="./js/main.js"></script>
+    <link rel="stylesheet" href="/immo_analyzer/css/style.css">
+    <link rel="stylesheet" href="/immo_analyzer/css/responsiveness.css">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+    <title>Immobilien Rechner</title>
+</head>
+
+<body>
+
+    <div class="app">
+
+        <header class="appHeader">
+            <h1>DealMeter</h1>
+            <p>Analyse von Immobilieninvestments & Cashflow</p>
+        </header>
+
+        <main class="dashboard">
+
+            <!-- Eingabe -->
+            <section class="card inputCard">
+                <h2>Deal Eingabe</h2>
+
+                <label>Kaufpreis</label>
+                <input id="price" type="number">
+
+                <label>Eigenkapital</label>
+                <input id="equity" type="number">
+
+                <label>Monatliche Kaltmiete</label>
+                <input id="rent" type="number">
+
+                <label>Nicht umlagefähige Kosten (monatlich)</label>
+                <input id="costs" type="number">
+
+                <label>Zinssatz (%)</label>
+                <input id="interest" type="number" step="0.01">
+
+                <label>Zinsbindung (Jahre)</label>
+                <input id="years" type="number">
+
+                <label>Zinssatz nach Zinsbindung (%)</label>
+                <input id="futureInterest" type="number">
+
+                <label>Anfängliche Tilgung (%)</label>
+                <input id="repayment" type="number" step="0.01">
+
+                <button id="calculateBtn" class="primaryBtn">Berechnen</button>
+                <button id="saveDealBtn" class="secondaryBtn">Berechnung speichern</button>
+
+            </section>
+
+
+            <!-- Analyse -->
+            <section class="card resultCard">
+                <h2>Analyse</h2>
+
+                <div id="rating" class="ratingBox hidden"></div>
+                <div id="dealScore" class="score-card hidden"></div>
+                <div id="analysisLoading" class="analysisLoading hidden">
+                    <div class="analysisLoader">
+                        <div class="pulse"></div>
+                        <p>Analysiere Investment…</p>
+                    </div>
+                </div>
+                <div id="analysisPlaceholder" class="analysisPlaceholder">
+                    <p>📊 Gib die Deal-Daten ein und klicke auf <strong>Berechnen</strong>.</p>
+                </div>
+                <pre id="result" class="resultBox hidden"></pre>
+            </section>
+
+
+            <!-- Gespeicherte Deals -->
+            <section class="card savedCard">
+                <h2>Gespeicherte Deals</h2>
+
+                <label for="sortDeals">Sortieren nach</label>
+                <select id="sortDeals">
+                    <option value="scoreDesc" selected>Deal Score (hoch → niedrig)</option>
+                    <option value="cashflowDesc">Cashflow nach Finanzierung (hoch → niedrig)</option>
+                    <option value="roeDesc">Eigenkapitalrendite (hoch → niedrig)</option>
+                    <option value="yieldDesc">Bruttomietrendite (hoch → niedrig)</option>
+                </select>
+
+                <div id="savedDeals"></div>
+            </section>
+
+        </main>
+
+    </div>
+
+</body>
+
+
+</html>
